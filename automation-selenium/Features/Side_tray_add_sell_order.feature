@@ -108,49 +108,49 @@ Feature: ADD Sell order side tray validation
 #	When the user selects the disclaimer footer message checkbox along with complete all the mandatory fields
 #	Then add button should be enabled
 #	
-	# @RegressionTest @SmokeTest
-	Scenario: Validate the draft order page
-	Given user is on ‘Add a sell order’ extended side tray 
-	When the user clicks the add button from Add a sell order extended side tray
-	Then order should be saved as draft order and should be displayed on the place order screen
-	
-	# @RegressionTest @SmokeTest
-	Scenario: Validate the draft order
-	Given user is on the draft order screen
-	When user click the available draft order
-	Then add sell order extended side tray should open and user should be able to edit the order
-
-	# @RegressionTest @SmokeTest
-	Scenario: validate the edit order
-	Given user is on the edit order screen
-	When user changes the different asset or order value
-	And click the update button
-	Then updated new changes should be displayed in the draft order screen
-	
+#	# @RegressionTest @SmokeTest
+#	Scenario: Validate the draft order page
+#	Given user is on ‘Add a sell order’ extended side tray 
+#	When the user clicks the add button from Add a sell order extended side tray
+#	Then order should be saved as draft order and should be displayed on the place order screen
+#	
+#	# @RegressionTest @SmokeTest
+#	Scenario: Validate the draft order
+#	Given user is on the draft order screen
+#	When user click the available draft order
+#	Then add sell order extended side tray should open and user should be able to edit the order
+#
+#	# @RegressionTest @SmokeTest
+#	Scenario: validate the edit order
+#	Given user is on the edit order screen
+#	When user changes the different asset or order value
+#	And click the update button
+#	Then updated new changes should be displayed in the draft order screen
+#	
 #	# @RegressionTest @SmokeTest
 #	Scenario: Validate the multiple orders
 #	Given user is on the draft order screen
 #	When the user clicks the sell button and places the another order
 #	Then newly placed order should be displayed under the previous order on the draft order screen
 	
-	# @RegressionTest @SmokeTest
-	Scenario: validate the close order button
-	Given user is on the draft order screen
-	When user clicks the close button for any draft order card
-	Then confirmation pop-up message should be displayed on the screen
-	
-	# @RegressionTest @SmokeTest
-	Scenario: Validate the Go back button on the confirmation popup
-	Given user is can able to view the confirmation pop-up for close order
-	When the user clicks the Go back button
-	Then that order should not be closed and order should be displayed on the draft order screen
-	
-	# @RegressionTest @SmokeTest
-	Scenario: Validate the cancel order button on the confirmation popup
-	Given user is can able to view the confirmation popup for close order
-	When the user clicks the cancel order button
-	Then that particular order should be get disappear from the draft order screen
-    
+#	# @RegressionTest @SmokeTest
+#	Scenario: validate the close order button
+#	Given user is on the draft order screen
+#	When user clicks the close button for any draft order card
+#	Then confirmation pop-up message should be displayed on the screen
+#	
+#	# @RegressionTest @SmokeTest
+#	Scenario: Validate the Go back button on the confirmation popup
+#	Given user is can able to view the confirmation pop-up for close order
+#	When the user clicks the Go back button
+#	Then that order should not be closed and order should be displayed on the draft order screen
+#	
+#	# @RegressionTest @SmokeTest
+#	Scenario: Validate the cancel order button on the confirmation popup
+#	Given user is can able to view the confirmation popup for close order
+#	When the user clicks the cancel order button
+#	Then that particular order should be get disappear from the draft order screen
+    #
 #Preview Order screen scenarios
 #
 #	# @RegressionTest @SmokeTest
@@ -199,3 +199,4 @@ Feature: ADD Sell order side tray validation
 #	Then  Order should be submitted
 #	And  unique reference number should be generated for each order on order confirmation screen
 #	
+
