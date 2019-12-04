@@ -1,0 +1,150 @@
+Feature: ADD Sell order side tray validation
+
+  #This feature will validate the Add sell order side tray functionalities
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the Place an order button on PV Screen for the portfolios which is up-to-date                                # Features/Side_tray_add_sell_order.feature:5
+    Given user is on Hive DashBoard screen                                                                                        # Add_sell_order.user_is_on_Hive_DashBoard_screen()
+    When user selects any portfolio from portfolio dropdown which is up-to-date                                                   # Add_sell_order.user_selects_any_portfolio_from_portfolio_dropdown_which_is_up_to_date()
+    Then page should be navigated to selected Portfolio summary screen and ‘Place an Order’ button should be enabled on PV screen # Add_sell_order.page_should_be_navigated_to_selected_Portfolio_summary_screen_and_Place_an_Order_button_should_be_enabled_on_PV_screen()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the Place order side tray                                             # Features/Side_tray_add_sell_order.feature:11
+    Given user is on Portfolio screen                                                      # Add_sell_order.user_is_on_Portfolio_screen()
+    When the user clicks the ‘Place an order’ button                                       # Add_sell_order.the_user_clicks_the_Place_an_order_button()
+    Then place order side tray should open                                                 # Add_sell_order.place_order_side_tray_should_open()
+    And place order, portfolio dropdown should be pre-populated the selected portfolio tab # Add_sell_order.place_order_portfolio_dropdown_should_be_pre_populated_the_selected_portfolio_tab()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the search portfolio from side tray                                # Features/Side_tray_add_sell_order.feature:18
+    Given user is on place an order side tray                                           # Add_sell_order.user_is_on_place_an_order_side_tray()
+    When user clicks the portfolio dropdown in `place an order` side tray               # Add_sell_order.user_clicks_the_portfolio_dropdown_in_place_an_order_side_tray()
+    Then user should be able to search different portfolios from the portfolio dropdown # Add_sell_order.user_should_be_able_to_search_different_portfolios_from_the_portfolio_dropdown()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the sell order screen                       # Features/Side_tray_add_sell_order.feature:24
+    Given user is on place an order side tray                    # Add_sell_order.user_is_on_place_an_order_side_tray()
+    When the user clicks the sell order button                   # Add_sell_order.the_user_clicks_the_sell_order_button()
+    Then ‘Add a sell order’ extended side tray should be display # Add_sell_order.add_a_sell_order_extended_side_tray_should_be_display()
+
+  # Validate sell Extended Side tray
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the cancel button in extended side tray                                            # Features/Side_tray_add_sell_order.feature:31
+    Given user is on ‘Add a sell order’ extended side tray                                              # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When the user clicks the cancel button from the extended side tray                                  # Add_sell_order.the_user_clicks_the_cancel_button_from_the_extended_side_tray()
+    Then extended side tray should be closed and the user should navigate back to place order side tray # Add_sell_order.extended_side_tray_should_be_closed_and_the_user_should_navigate_back_to_place_order_side_tray()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the portfolio holding searchbox                                             # Features/Side_tray_add_sell_order.feature:37
+    Given user is on ‘Add a sell order’ extended side tray                                       # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When user search for any portfolio holding using the searchbox                               # Add_sell_order.user_search_for_any_portfolio_holding_using_the_searchbox()
+    Then user should get the result based on the search keyword and select the portfolio_holding # Add_sell_order.user_should_get_the_result_based_on_the_search_keyword_and_select_the_portfolio_holding()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the exit price                                                         # Features/Side_tray_add_sell_order.feature:43
+    Given user is on ‘Add a sell order’ extended side tray                                  # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When user finds the availble exit price of that portfolio holding on extended side tray # Add_sell_order.user_finds_the_availble_exit_price_of_that_portfolio_holding_on_extended_side_tray()
+    Then available exit price for that unit should be displayed with est.label              # Add_sell_order.available_exit_price_for_that_unit_should_be_displayed_with_est_label()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the Order amount field on add sell order screen                                # Features/Side_tray_add_sell_order.feature:49
+    Given user is on ‘Add a sell order’ extended side tray                                          # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When the user clicks anywhere in the screen without entering anything on the order amount field # Add_sell_order.the_user_clicks_anywhere_in_the_screen_without_entering_anything_on_the_order_amount_filed()
+    Then error message should be displayed under the order amount screen                            # Add_sell_order.error_message_should_be_displayed_under_the_order_amount_screen()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the order amount field validation                                                         # Features/Side_tray_add_sell_order.feature:55
+    Given user is on ‘Add a sell order’ extended side tray                                                     # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When the user enters the Special character and text values in the order amount text box                    # Add_sell_order.the_user_enters_the_Special_character_and_text_values_in_the_order_amount_text_box()
+    Then user should not be allowed to enter the special character and text values into the order amount field # Add_sell_order.user_should_not_be_allowed_to_enter_the_special_character_and_text_values_into_the_order_amount_field()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the add button on the ‘add a sell order button’ # Features/Side_tray_add_sell_order.feature:61
+    Given user is on ‘Add a sell order’ extended side tray           # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When the user didn’t enter/select anything on the screen         # Add_sell_order.the_user_didn_t_enter_select_anything_on_the_screen()
+    Then ‘Add’ button should be in disable mode                      # Add_sell_order.add_button_should_be_in_disable_mode()
+
+  # @RegressionTest @SmokeTest
+  Scenario: validate the maximum order amount                              # Features/Side_tray_add_sell_order.feature:67
+    Given user is on ‘Add a sell order’ extended side tray                 # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When the user enters more than available units                         # Add_sell_order.the_user_enters_more_than_available_units()
+    Then error message should be displayed under the order amount text box # Add_sell_order.error_message_should_be_displayed_under_the_order_amount_text_box()
+
+  # @RegressionTest @SmokeTest
+  Scenario: validate order amount and available units are the same                    # Features/Side_tray_add_sell_order.feature:73
+    Given user is on ‘Add a sell order’ extended side tray                            # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When the user enter the enters the order amount which is equal to available units # Add_sell_order.the_user_enter_the_enters_the_order_amount_which_is_equal_to_available_units()
+    Then user should get the 'Full redemption' message under the order value text box # Add_sell_order.user_should_get_the_Full_redemption_message_under_the_order_value_text_box()
+
+  #	Scenario: validate the Minimum order amount
+  #	Given user is on ‘Add a sell order’ extended side tray
+  #	When the order value is less than the transaction fee
+  #	Then user should not allow placing the order and error message should be displayed on the screen and +add or update button should be disabled
+  #
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the order value calculation                                                                         # Features/Side_tray_add_sell_order.feature:84
+    Given user is on ‘Add a sell order’ extended side tray                                                               # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When the user enters the order units                                                                                 # Add_sell_order.the_user_enters_the_order_units()
+    Then order units should be multiplied with the exit price and the result should be subtracted with a transaction fee # Add_sell_order.order_units_should_be_multiplied_with_the_exit_price_and_the_result_should_be_subtracted_with_a_transaction_fee()
+    And Final calculated value should be displayed as order value est with 2 decimal places                              # Add_sell_order.final_calculated_value_should_be_display_as_order_value_est_with_decimal_places(int)
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the Advice given ’No’ radio button    # Features/Side_tray_add_sell_order.feature:91
+    Given user is on ‘Add a sell order’ extended side tray # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When user select the ’No’ option                       # Add_sell_order.user_select_the_No_option()
+    Then 'Advice given' details should not be displayed    # Add_sell_order.advice_given_details_should_not_be_displayed()
+
+  # @RegressionTest @SmokeTest
+  Scenario: validate the Advice given ‘Yes’ radio button                                                      # Features/Side_tray_add_sell_order.feature:97
+    Given user is on ‘Add a sell order’ extended side tray                                                    # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When user select the ’Yes’ option                                                                         # Add_sell_order.user_select_the_Yes_option()
+    Then advice reason, date, summary and advice method fields should be display under the advice given label # Add_sell_order.advice_reason_date_summary_and_advice_method_fields_should_be_display_under_the_advice_given_label()
+    And Date field should have todays's field as default                                                      # Add_sell_order.date_field_should_have_todays_s_field_as_default()
+    And add button should be enabled                                                                          # Add_sell_order.add_button_should_be_enabled()
+
+  #	# @RegressionTest @SmokeTest
+  #	Scenario: Validate the disclaimer footer message
+  #	Given user is on ‘Add a sell order’ extended side tray
+  #	When the user selects the disclaimer footer message checkbox along with complete all the mandatory fields
+  #	Then add button should be enabled
+  #
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the draft order page                                                       # Features/Side_tray_add_sell_order.feature:112
+    Given user is on ‘Add a sell order’ extended side tray                                      # Add_sell_order.user_is_on_Add_a_sell_order_extended_side_tray()
+    When the user clicks the add button from Add a sell order extended side tray                # Add_sell_order.the_user_clicks_the_add_button_from_Add_a_sell_order_extended_side_tray()
+    Then order should be saved as draft order and should be displayed on the place order screen # Add_sell_order.order_should_be_saved_as_draft_order_and_should_be_displayed_on_the_place_order_screen()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the draft order                                                             # Features/Side_tray_add_sell_order.feature:118
+    Given user is on the draft order screen                                                      # Add_sell_order.user_is_on_the_draft_order_screen()
+    When user click the available draft order                                                    # Add_sell_order.user_click_the_available_draft_order()
+    Then add sell order extended side tray should open and user should be able to edit the order # Add_sell_order.add_sell_order_extended_side_tray_should_open_and_user_should_be_able_to_edit_the_order()
+
+  # @RegressionTest @SmokeTest
+  Scenario: validate the edit order                                        # Features/Side_tray_add_sell_order.feature:124
+    Given user is on the edit order screen                                 # Add_sell_order.user_is_on_the_edit_order_screen()
+    When user changes the different asset or order value                   # Add_sell_order.user_changes_the_different_asset_or_order_value()
+    And click the update button                                            # Add_sell_order.click_the_update_button()
+    Then updated new changes should be displayed in the draft order screen # Add_sell_order.updated_new_changes_should_be_displayed_in_the_draft_order_screen()
+
+  #	# @RegressionTest @SmokeTest
+  #	Scenario: Validate the multiple orders
+  #	Given user is on the draft order screen
+  #	When the user clicks the sell button and places the another order
+  #	Then newly placed order should be displayed under the previous order on the draft order screen
+  # @RegressionTest @SmokeTest
+  Scenario: validate the close order button                            # Features/Side_tray_add_sell_order.feature:137
+    Given user is on the draft order screen                            # Add_sell_order.user_is_on_the_draft_order_screen()
+    When user clicks the close button for any draft order card         # Add_sell_order.user_clicks_the_close_button_for_any_draft_order_card()
+    Then confirmation pop-up message should be displayed on the screen # Add_sell_order.confirmation_pop_up_message_should_be_displayed_on_the_screen()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the Go back button on the confirmation popup                                # Features/Side_tray_add_sell_order.feature:143
+    Given user is can able to view the confirmation pop-up for close order                       # Add_sell_order.user_is_can_able_to_view_the_confirmation_pop_up_for_close_order()
+    When the user clicks the Go back button                                                      # Add_sell_order.the_user_clicks_the_Go_back_button()
+    Then that order should not be closed and order should be displayed on the draft order screen # Add_sell_order.that_order_should_not_be_closed_and_order_should_be_displayed_on_the_draft_order_screen()
+
+  # @RegressionTest @SmokeTest
+  Scenario: Validate the cancel order button on the confirmation popup             # Features/Side_tray_add_sell_order.feature:149
+    Given user is can able to view the confirmation popup for close order          # Add_sell_order.user_is_can_able_to_view_the_confirmation_popup_for_close_order()
+    When the user clicks the cancel order button                                   # Add_sell_order.the_user_clicks_the_cancel_order_button()
+    Then that particular order should be get disappear from the draft order screen # Add_sell_order.that_particular_order_should_be_get_disappear_from_the_draft_order_screen()

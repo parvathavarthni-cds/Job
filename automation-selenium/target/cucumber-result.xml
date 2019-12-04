@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="21" time="155.968489">
+<testcase classname="ADD Sell order side tray validation" name="Validate the Place an order button on PV Screen for the portfolios which is up-to-date" time="42.502658">
+<system-out><![CDATA[Given user is on Hive DashBoard screen......................................passed
+When user selects any portfolio from portfolio dropdown which is up-to-date.passed
+Then page should be navigated to selected Portfolio summary screen and ‘Place an Order’ button should be enabled on PV screen.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the Place order side tray" time="9.363144">
+<system-out><![CDATA[Given user is on Portfolio screen...........................................passed
+When the user clicks the ‘Place an order’ button............................passed
+Then place order side tray should open......................................passed
+And place order, portfolio dropdown should be pre-populated the selected portfolio tab.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the search portfolio from side tray" time="18.58972">
+<system-out><![CDATA[Given user is on place an order side tray...................................passed
+When user clicks the portfolio dropdown in `place an order` side tray.......passed
+Then user should be able to search different portfolios from the portfolio dropdown.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the sell order screen" time="5.305725">
+<system-out><![CDATA[Given user is on place an order side tray...................................passed
+When the user clicks the sell order button..................................passed
+Then ‘Add a sell order’ extended side tray should be display................passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the cancel button in extended side tray" time="7.354821">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When the user clicks the cancel button from the extended side tray..........passed
+Then extended side tray should be closed and the user should navigate back to place order side tray.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the portfolio holding searchbox" time="9.386414">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When user search for any portfolio holding using the searchbox..............passed
+Then user should get the result based on the search keyword and select the portfolio_holding.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the exit price" time="0.089017">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When user finds the availble exit price of that portfolio holding on extended side tray.passed
+Then available exit price for that unit should be displayed with est.label..passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the Order amount field on add sell order screen" time="2.187468">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When the user clicks anywhere in the screen without entering anything on the order amount field.passed
+Then error message should be displayed under the order amount screen........passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the order amount field validation" time="2.217369">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When the user enters the Special character and text values in the order amount text box.passed
+Then user should not be allowed to enter the special character and text values into the order amount field.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the add button on the ‘add a sell order button’" time="2.106359">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When the user didn’t enter/select anything on the screen....................passed
+Then ‘Add’ button should be in disable mode.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="validate the maximum order amount" time="2.289763">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When the user enters more than available units..............................passed
+Then error message should be displayed under the order amount text box......passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="validate order amount and available units are the same" time="2.485926">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When the user enter the enters the order amount which is equal to available units.passed
+Then user should get the 'Full redemption' message under the order value text box.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the order value calculation" time="0.248829">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When the user enters the order units........................................passed
+Then order units should be multiplied with the exit price and the result should be subtracted with a transaction fee.passed
+And Final calculated value should be displayed as order value est with 2 decimal places.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the Advice given ’No’ radio button" time="2.351879">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When user select the ’No’ option............................................passed
+Then 'Advice given' details should not be displayed.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="validate the Advice given ‘Yes’ radio button" time="7.002646">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When user select the ’Yes’ option...........................................passed
+Then advice reason, date, summary and advice method fields should be display under the advice given label.passed
+And Date field should have todays's field as default........................passed
+And add button should be enabled............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the draft order page" time="5.273154">
+<system-out><![CDATA[Given user is on ‘Add a sell order’ extended side tray......................passed
+When the user clicks the add button from Add a sell order extended side tray.passed
+Then order should be saved as draft order and should be displayed on the place order screen.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the draft order" time="5.151022">
+<system-out><![CDATA[Given user is on the draft order screen.....................................passed
+When user click the available draft order...................................passed
+Then add sell order extended side tray should open and user should be able to edit the order.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="validate the edit order" time="12.394501">
+<system-out><![CDATA[Given user is on the edit order screen......................................passed
+When user changes the different asset or order value........................passed
+And click the update button.................................................passed
+Then updated new changes should be displayed in the draft order screen......passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="validate the close order button" time="2.178735">
+<system-out><![CDATA[Given user is on the draft order screen.....................................passed
+When user clicks the close button for any draft order card..................passed
+Then confirmation pop-up message should be displayed on the screen..........passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the Go back button on the confirmation popup" time="5.223965">
+<system-out><![CDATA[Given user is can able to view the confirmation pop-up for close order......passed
+When the user clicks the Go back button.....................................passed
+Then that order should not be closed and order should be displayed on the draft order screen.passed
+]]></system-out>
+</testcase>
+<testcase classname="ADD Sell order side tray validation" name="Validate the cancel order button on the confirmation popup" time="12.265374">
+<system-out><![CDATA[Given user is can able to view the confirmation popup for close order.......passed
+When the user clicks the cancel order button................................passed
+Then that particular order should be get disappear from the draft order screen.passed
+]]></system-out>
+</testcase>
+</testsuite>

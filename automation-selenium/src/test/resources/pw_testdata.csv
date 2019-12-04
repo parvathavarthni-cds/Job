@@ -1,0 +1,6 @@
+URL,Username,password,share_user,summary,Description,investor_praemium_id,Invalid_password,invalid_new_password,invalid_username,DG Admin,order_value_special_character,Order_value_invalid_decimal places,valid order amount,final order value,maximum_order_value,order amount updated,final order value updated,After portfolio impact units
+https://qa-hive.powerwrap.com.au/,gunaseeelan.p100@gmail.com,HiveTest@0555,Gunaseelan Palanisamy,This is created by testing team. Please ignore this.,This is created by testing team. Please ignore this.,1007815,P@ssword1234,123,priyanga.alagar@crystaldelta.com,gunaseeelan.p101@gmail.com,@GHF*,1000.987654,25,24.78,988888.3123,75,115.33,90268.7
+investor_list_API,,,,,,,,,,,,,,,,,,
+https://qa-hive-api.powerwrap.com.au/api/investors?type=portfolio&service_id=2&investor_id=1007815&praemium_id=272020&advisor_id=100&date=&service_code=P&praemium_user_id=&session_id=gunaseeelan.p100@gmail.com,,,,,,,,,,,,,,,,,,
+investor_list_API_With_date,,,,,,,,,,,,,,,,,,
+https://qa-hive-api.powerwrap.com.au/api/investors?type=portfolio&service_id=2&investor_id=1007815&praemium_id=272020&advisor_id=100&date=2018-04-10&service_code=P&praemium_user_id=&session_id=gunaseeelan.p100@gmail.com,,,,,,,,,,,,,,,,,,
